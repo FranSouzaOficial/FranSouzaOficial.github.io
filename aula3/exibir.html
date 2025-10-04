@@ -1,0 +1,31 @@
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Link atual: <span id="link"> </span>
+    <br>
+    Resolução: <span id="largura"></span> <span id="altura"></span>
+    <br>
+    Número aleatório: <span id="aleatorio"></span>
+
+    <script>
+        document.getElementById("link").textContent = window.location.href;
+
+        document.getElementById("largura").textContent = window.innerWidth;
+        document.getElementById("altura").textContent = window.innerHeight;
+
+        var max = 100;
+        var min = 50;
+        var numeroAleatorio = Math.floor(Math.random()* (100 - 50 + 1)) + 50;
+        document.getElementById("aleatorio").textContent = numeroAleatorio;
+
+        window.onresize = function () {
+            document.getElementById("largura").textContent = window.innerWidth;
+            document.getElementById("altura").textContent = window.innerHeight;
+        }
+    </script>
+</body>
+</html>
